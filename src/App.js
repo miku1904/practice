@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+const [name,setName]=useState("")
+const [email,setEmail]=useState("")
+
+ const Data = (e) => {
+  console.log(e.target.value)
+
+}
+
   return (
+      // console.log(event.target.value)
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={onSubmit}>
+        <input type="text" name="name" placeholder='name' onChange={Data}/><br/>
+        <input type="text" name="email" placeholder='email' onChange={Data}/><br/>
+        <button type="submit" value="submit" >submit </button>
+      </form>
     </div>
   );
 }
